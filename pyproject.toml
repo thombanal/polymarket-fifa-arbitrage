@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clip-recipes"
+version = "0.1.0"
+description = "Practical CLIP fine-tuning recipes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Tianyu Han"}]
+dependencies = [
+    "torch>=2.1",
+    "torchvision",
+    "transformers>=4.40",
+    "open_clip_torch>=2.24",
+    "webdataset>=0.2.86",
+    "pyyaml",
+    "numpy",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+train = ["accelerate>=0.30", "wandb", "peft>=0.10"]
+zh = ["jieba", "sentencepiece"]
+faiss = ["faiss-cpu"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+clip-train = "clip_recipes.train:main"
+clip-eval = "clip_recipes.eval.zeroshot:main"
