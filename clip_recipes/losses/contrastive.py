@@ -51,3 +51,5 @@ class LocalLoss(nn.Module):
         labels = torch.arange(bsz, device=image_feats.device) + offset
         loss = 0.5 * (F.cross_entropy(logits_i2t, labels) + F.cross_entropy(logits_t2i, labels))
         return loss
+
+# bug: labels were `arange(B)` regardless of rank, fixed to add rank*B offset
