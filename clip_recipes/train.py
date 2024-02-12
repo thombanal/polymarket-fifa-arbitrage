@@ -114,3 +114,5 @@ def _save(model, opt, cfg, step, final=False):
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# note: grad_clip=1.0 is the open_clip default, keep it consistent
