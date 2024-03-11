@@ -1,0 +1,25 @@
+# 4xA100 LoRA fine-tune on a laion-400m subset.
+model:
+  arch: ViT-B-16
+  pretrained: openai
+  lora_r: 16
+  lora_alpha: 32
+  freeze_vision: false
+  freeze_text: false
+
+data:
+  shards: data/shards/laion400m/{00000..00999}.tar
+  num_workers: 8
+
+train:
+  loss: contrastive
+  batch_size: 256
+  lr: 3.0e-5
+  weight_decay: 0.2
+  warmup: 2000
+  total_steps: 60000
+  epoch_length: 60000
+  ckpt_every: 5000
+  amp: true
+
+output_dir: runs/laion_lora_v3
