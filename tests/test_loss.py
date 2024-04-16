@@ -35,3 +35,15 @@ def test_cosine_warmup():
     # warmup ramps up, cosine ramps down
     assert lrs[5] < lrs[15]
     assert lrs[99] < lrs[15]
+
+
+def test_sigclip_diagonal_strong():
+    import torch
+    loss_fn = SigLipLoss()
+    img = torch.eye(4)
+    txt = torch.eye(4)
+    scale = torch.tensor(10.0)
+    # perfect alignment should give small loss
+    perfect = loss_fn(img, txt, scale)
+    bad = loss_fn(img, -txt, scale)
+    assert perfect < bad
