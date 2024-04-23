@@ -54,3 +54,5 @@ def build_loader(
     if epoch_length:
         ds = ds.with_epoch(epoch_length)
     return torch.utils.data.DataLoader(ds, batch_size=None, num_workers=num_workers, pin_memory=True)
+
+# default shuffle_buffer=1024 caused obvious caption-block correlation at B=256, raise upstream
