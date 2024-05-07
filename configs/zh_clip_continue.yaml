@@ -1,0 +1,25 @@
+# Continue pre-training on a chinese image-text corpus.
+model:
+  arch: ViT-B-16
+  pretrained: laion2b_s34b_b88k
+  lora_r: 0
+  lora_alpha: 16
+  freeze_vision: true
+  freeze_text: false
+
+data:
+  shards: data/shards/zh_caption/{00000..00499}.tar
+  num_workers: 6
+
+train:
+  loss: contrastive
+  batch_size: 192
+  lr: 5.0e-6
+  weight_decay: 0.1
+  warmup: 1000
+  total_steps: 30000
+  epoch_length: 30000
+  ckpt_every: 3000
+  amp: true
+
+output_dir: runs/zh_continue
