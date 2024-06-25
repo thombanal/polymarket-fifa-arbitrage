@@ -18,3 +18,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# loop: encode all images, encode all texts, compute cosine sim, top-k per row
