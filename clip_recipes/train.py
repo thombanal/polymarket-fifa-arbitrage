@@ -118,3 +118,5 @@ if __name__ == "__main__":
 # note: grad_clip=1.0 is the open_clip default, keep it consistent
 
 # clamp logit_scale to [0, ln(100)] = [0, 4.6052]
+
+# every ckpt_every steps log alignment(img,txt) + uniformity(img) + uniformity(txt)
