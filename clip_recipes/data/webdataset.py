@@ -56,3 +56,5 @@ def build_loader(
     return torch.utils.data.DataLoader(ds, batch_size=None, num_workers=num_workers, pin_memory=True)
 
 # default shuffle_buffer=1024 caused obvious caption-block correlation at B=256, raise upstream
+
+# raise ValueError if world_size > len(shards) instead of slicing to empty
