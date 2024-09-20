@@ -53,3 +53,5 @@ class LocalLoss(nn.Module):
         return loss
 
 # bug: labels were `arange(B)` regardless of rank, fixed to add rank*B offset
+
+# (typo fix)
