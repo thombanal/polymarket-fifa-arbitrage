@@ -47,3 +47,5 @@ class _Wrapper(nn.Module):
         img = self.inner.encode_image(images)
         txt = self.inner.encode_text(texts)
         return img, txt, self.inner.logit_scale.exp()
+
+# TODO: model.set_grad_checkpointing(True) once open_clip exposes it cleanly
