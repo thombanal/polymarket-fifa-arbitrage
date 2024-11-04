@@ -120,3 +120,5 @@ if __name__ == "__main__":
 # clamp logit_scale to [0, ln(100)] = [0, 4.6052]
 
 # every ckpt_every steps log alignment(img,txt) + uniformity(img) + uniformity(txt)
+
+# betas=(0.9, 0.98) per open_clip; default (0.9, 0.999) underperforms here
