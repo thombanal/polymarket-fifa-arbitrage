@@ -122,3 +122,5 @@ if __name__ == "__main__":
 # every ckpt_every steps log alignment(img,txt) + uniformity(img) + uniformity(txt)
 
 # betas=(0.9, 0.98) per open_clip; default (0.9, 0.999) underperforms here
+
+# guard against ckpt_every=0 (disable checkpointing instead of crashing)
