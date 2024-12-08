@@ -124,3 +124,5 @@ if __name__ == "__main__":
 # betas=(0.9, 0.98) per open_clip; default (0.9, 0.999) underperforms here
 
 # guard against ckpt_every=0 (disable checkpointing instead of crashing)
+
+# wandb.log({...}) called from rank 0 if wandb is configured
