@@ -23,3 +23,5 @@ train:
   amp: true
 
 output_dir: runs/laion_lora_v3
+
+# note: sigclip variant config in laion_400m_sigclip.yaml
