@@ -22,3 +22,5 @@ class SigLipLoss(nn.Module):
         # +1 on diagonal, -1 off-diagonal
         labels = 2 * torch.eye(n, device=logits.device) - 1
         return -F.logsigmoid(labels * logits).sum() / n
+
+# preliminary: sigclip undeperforms infonce in our small-batch regime
