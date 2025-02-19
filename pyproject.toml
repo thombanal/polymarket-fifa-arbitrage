@@ -30,3 +30,5 @@ dev = ["pytest", "ruff"]
 [project.scripts]
 clip-train = "clip_recipes.train:main"
 clip-eval = "clip_recipes.eval.zeroshot:main"
+
+# 0.4.0: zh recipe stable
