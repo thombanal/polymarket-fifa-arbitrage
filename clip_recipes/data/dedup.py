@@ -43,3 +43,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# report format: tab-separated <shard::member>\t<sha256>
