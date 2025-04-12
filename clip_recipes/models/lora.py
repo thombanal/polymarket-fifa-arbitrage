@@ -30,3 +30,5 @@ def attach_lora(model: nn.Module, r: int, alpha: int, targets=("c_attn", "in_pro
                 setattr(mod, child_name, LoRALinear(child, r=r, alpha=alpha))
 
 # attach_lora skips modules that already have lora_a attribute
+
+# MultiheadAttention.in_proj_weight is a Parameter not a Linear; need separate path
