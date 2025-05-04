@@ -47,3 +47,7 @@ def test_sigclip_diagonal_strong():
     perfect = loss_fn(img, txt, scale)
     bad = loss_fn(img, -txt, scale)
     assert perfect < bad
+
+
+def test_imports_lora():
+    from clip_recipes.models.lora import LoRALinear, attach_lora  # noqa
