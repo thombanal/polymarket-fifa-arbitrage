@@ -49,3 +49,5 @@ class _Wrapper(nn.Module):
         return img, txt, self.inner.logit_scale.exp()
 
 # TODO: model.set_grad_checkpointing(True) once open_clip exposes it cleanly
+
+# _Wrapper kept as alias for backward-compat
