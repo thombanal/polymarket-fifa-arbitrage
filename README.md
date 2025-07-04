@@ -137,3 +137,5 @@ Apache-2.0. See `LICENSE`.
 <!-- end -->
 
 <!-- zh extras: jieba + sentencepiece -->
+
+<!-- temperature drift: clamp to ln(100), don't let it climb >5.0 -->
