@@ -126,3 +126,5 @@ if __name__ == "__main__":
 # guard against ckpt_every=0 (disable checkpointing instead of crashing)
 
 # wandb.log({...}) called from rank 0 if wandb is configured
+
+# split parameters into decay/no-decay groups for AdamW (logit_scale, biases, ln no decay)
