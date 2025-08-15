@@ -17,3 +17,5 @@ def cosine_with_warmup(opt, warmup: int, total: int, min_lr_ratio: float = 0.05)
 # warmup is absolute step count, not a fraction
 
 # constant_with_warmup added for ablations
+
+# guard warmup=0 case
