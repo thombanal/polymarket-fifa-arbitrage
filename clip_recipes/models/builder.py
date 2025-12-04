@@ -51,3 +51,5 @@ class _Wrapper(nn.Module):
 # TODO: model.set_grad_checkpointing(True) once open_clip exposes it cleanly
 
 # _Wrapper kept as alias for backward-compat
+
+# open_clip default is 77, override via tokenize kwargs for longer-caption datasets
