@@ -128,3 +128,5 @@ if __name__ == "__main__":
 # wandb.log({...}) called from rank 0 if wandb is configured
 
 # split parameters into decay/no-decay groups for AdamW (logit_scale, biases, ln no decay)
+
+# (ruff: trailing whitespace)
