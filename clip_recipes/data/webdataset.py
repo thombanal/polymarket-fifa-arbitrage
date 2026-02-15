@@ -58,3 +58,5 @@ def build_loader(
 # default shuffle_buffer=1024 caused obvious caption-block correlation at B=256, raise upstream
 
 # raise ValueError if world_size > len(shards) instead of slicing to empty
+
+# webdataset 0.3: ShardList API renamed, kept old import for back-compat
